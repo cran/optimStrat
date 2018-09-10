@@ -16,9 +16,9 @@ If \code{x} and \code{y} are vectors of different length, the elements of the sh
 \value{
 An object with the absolute differences between \code{x} and \code{y}.}
 \examples{
-absdif(1:10,10:1)
+absdif(1:10, 10:1)
 
-x<- matrix(1:12,4,3)
-y<- matrix(12:1,4,3)
-absdif(x,y)
+x<- matrix(1:12, 4, 3)
+y<- matrix(12:1, 4, 3)
+absdif(x, y)
 }

@@ -20,6 +20,7 @@ HTML('
       border:1px solid black; border-style:inset; width=100px; margin:0 auto}
    #Nota {text-align:center; margin:0 0 2em 0}
    #Objective {width:50em; margin:0 auto 1em; border-style:outset; background-color:#AFC8AF; font-weight:bold}
+   img {float:right}
    #encabezado {margin-bottom: 4em}
    #Marco1 {float:left; position:fixed; width:25%; font-size:0.9em; border-style:outset; margin: 0em 0 0 0; padding:0 1em; 
    line-height:1.6em; background-color:#C7CAC9; margin:0em 0 0 0}
@@ -33,6 +34,8 @@ HTML('
 
    <body>
    <div id="encabezado">
+<!--   <img src="logo.png" alt="SU_logo" width=170 height=133 /> -->
+
    <h1 id="Top">Optimal Strategy</h1>
 
    <p id="Subtitulo">Looking for an optimal sampling strategy</p>
@@ -75,11 +78,11 @@ HTML('
     regression estimator, <math <mi>&#x03C0;</mi></math>ps-GREG, is sometimes called optimal. 
     However, this optimality is based on the strong assumption that the study variable is a realization 
     of a model with some of its parameters known. As these assumptions are hardly satisfied in 
-   practice, one might find that a different strategy is, in fact, more efficient than the so-called optimal.</p>
+   practice, one might find that a different strategy is, in fact, more efficient.</p>
 
    <p> The idea behind this app is as follows:</p>
 
-   <p>At the planning stage of a study, the statistician has one quantitative auxiliary variable at 
+   <p>At the planning stage of a study, the statistician has one positive quantitative auxiliary variable at 
     hand, <em>x</em>, and needs to decide on the best way for making use of that auxiliary 
     information in order to obtain a good estimate of the total of the variable of interest, 
     <em>y</em>. In other words, the statistician wants to find an efficient sampling strategy.</p>
@@ -95,7 +98,7 @@ HTML('
     <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> <mo>+</mo>
     <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow> </msub>
     <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
-    <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4;<!-- ?? --></mi> 
+    <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4;</mi> 
     <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msub> </mrow> </msubsup> <mo>+</mo>
     <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub> </math>
     </span>
@@ -111,51 +114,53 @@ HTML('
     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
     </msub> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi> </mrow> </msub>
     <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
-   <span class="ecuacion parte4" id="asumidocon3"><math xmlns="http://www.w3.org/1998/Math/MathML">
-    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03BE;<!-- ?? --></mi>
-    <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> </mrow> </msub> <mrow> <mo>(</mo>
-    <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
-    <mo>)</mo> </mrow> <mo>=</mo> <msub> <mi>&#x03B4;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn> </mrow> </msub> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-    </mrow> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>2&#x03B4;<!-- ?? --></mi> 
-    <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub> </mrow> </msubsup> </math></span>
+   <span class="ecuacion parte4" id="asumidocon3"> <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03BE;</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> </mrow> </msub>
+    <mo stretchy="false">(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD">
+    <mi>k</mi> </mrow> </msub> <mo stretchy="false">)</mo> <mo>=</mo> <msubsup> 
+    <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> 
+    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msubsup> <msubsup> <mi>x</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn>
+    <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub>
+    </mrow> </msubsup> </math></span>
    </p>
    </div>
 
-   <p>However, the statistician is not 100% optimistic regarding the model: he/she knows that it is 
-    very unlikely that the <em>assumed</em> model is completely right. Therefore, wants to study 
+   <p>However, the statistician is not 100% optimistic regarding the model: (s)he knows that it is 
+    very unlikely that the <em>assumed</em> model is completely right. Therefore the statistician wants to study 
     the impact of assuming the model above when the <em>true generating model</em>, 
-    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x03BE;<!-- ?? --></mi></math>, 
+    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x03BE;</mi></math>, 
     differs and can be written as:</p>
 
    <div class="modelo">
    <p> <span class="ecuacion" id="modelover"><math xmlns="http://www.w3.org/1998/Math/MathML">
     <msub> <mi>Y</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub> <mo>=</mo>
-    <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub>
-    <mo>+</mo> <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow>
+    <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub>
+    <mo>+</mo> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow>
     </msub> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> 
-    <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD">
+    <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD">
     <mn>2</mn> </mrow> </msub> </mrow> </msubsup> <mo>+</mo>
-    <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
+    <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
     </math></span>
    <span class="basura">MM</span>with<span class="basura">MM</span>
    <span class="ecuacion" id="verdadcon1"><math xmlns="http://www.w3.org/1998/Math/MathML">
-    <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-    <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
+    <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+    <mrow> <mo>(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
     </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
    <span class="ecuacion" id="verdadcon2"><math xmlns="http://www.w3.org/1998/Math/MathML">
-    <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-    <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-    </mrow> </msub> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi>
+    <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+    <mrow> <mo>(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
+    </mrow> </msub> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi>
     </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
-   <span class="ecuacion" id="verdadcon3"><math xmlns="http://www.w3.org/1998/Math/MathML">
-    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-    <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-    </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <msub> <mi>&#x03B2;<!-- ?? --></mi>
-    <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> </msub> <msubsup> <mi>x</mi> 
-    <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> <mrow class="MJX-TeXAtom-ORD">
-    <msub> <mi>2&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub>
-    </mrow> </msubsup> </math></span>
+   <span class="ecuacion" id="verdadcon3"> <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+    <mo stretchy="false">(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
+    </msub> <mo stretchy="false">)</mo> <mo>=</mo> <msubsup> <mi>&#x03B2;</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow>
+    </msubsup> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD">
+    <mn>4</mn> </mrow> </msub> </mrow> </msubsup> </math> </span>
    </p>
    </div>
 
@@ -206,7 +211,7 @@ HTML('
    is the auxiliary vector to be used in the regression 
     estimator.</p>
 
-   <p><strong>Interpretation:</strong> Both models consist of two terms:</p>
+   <p><strong>Interpretation:</strong> Both models are composed of two terms:</p>
 
    <ul><li>A <em>trend</em> term:
     <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> <mo>+</mo> 
@@ -221,7 +226,9 @@ HTML('
    <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msub> </math> 
     is a shape factor.</li>
    <li>A <em>variance</em> term:
-   <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> </msub> <msubsup>
+   <math> <msubsup> 
+    <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> 
+    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msubsup> <msubsup>
     <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> <mrow class="MJX-TeXAtom-ORD"> <msub>
     <mi>2&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub> </mrow> </msubsup> </math>,
     where
@@ -255,7 +262,7 @@ HTML('
    <div class="seccion">
    <h2 id="Step1">Uploading/Simulating the auxiliary variable</h2>
 
-   <p>In this step the quantitative auxiliary variable, <em>x</em>, that will be used 
+   <p>In this step the positive quantitative auxiliary variable, <em>x</em>, that will be used 
     for assisting the estimation of the total of the study variable, <em>y</em>, is defined. 
     Two methods are allowed: the observations can be loaded from an external file, or, 
     they can be simulated from a gamma distribution with fixed mean 48 plus one unit and the
@@ -302,7 +309,7 @@ HTML('
      <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> <mo>+</mo>
      <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow> </msub>
      <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
-     <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4;<!-- ?? --></mi> 
+     <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4;</mi> 
      <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msub> </mrow> </msubsup> <mo>+</mo>
      <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub> </math>
      </span> 
@@ -319,35 +326,36 @@ HTML('
      </msub> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi> </mrow> </msub>
      <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
      <span class="ecuacion" id="asumidocon33"><math xmlns="http://www.w3.org/1998/Math/MathML">
-     <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03BE;<!-- ?? --></mi>
-     <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> </mrow> </msub> <mrow> <mo>(</mo>
-     <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
-     <mo>)</mo> </mrow> <mo>=</mo> <msub> <mi>&#x03B4;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD">
-     <mn>3</mn> </mrow> </msub> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-     </mrow> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>2&#x03B4;<!-- ?? --></mi> 
-     <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub> </mrow> </msubsup> </math></span>
+    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03BE;</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> </mrow> </msub>
+    <mo stretchy="false">(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD">
+    <mi>k</mi> </mrow> </msub> <mo stretchy="false">)</mo> <mo>=</mo> <msubsup> 
+    <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> 
+    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msubsup> <msubsup> <mi>x</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn>
+    <msub> <mi>&#x03B4;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub>
+    </mrow> </msubsup> </math></span>
      </p>
    </div>
       
-   <p>In this step, the user specifies the parameters of the model above. Note that only 
+   <p>In this step the user specifies the parameters of the model above. Note that only 
     <math> <msub> <mi>&#x03B4;</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow> </msub></math>
     and
     <math> <msub> <mi>&#x03B4;</mi><mrow class="MJX-TeXAtom-ORD"><mn>4</mn></mrow> </msub></math>
-    are required. This is so, because these are the only parameters required 
-    for defining the sampling strategy.</p>
+    are required for defining the sampling strategy.</p>
 
-   <p>The output is a plot showing the model assumed by the user, where 
+   <p>The output is a plot showing the model assumed by the user (where 
     <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub> </math>, 
     <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow> </msub> </math> and 
     <math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> </msub> </math>
-    are predefined by convenience. The red line indicates the trend and the shaded area around
+    are predefined by convenience). The red line indicates the trend and the shaded area around
     indicates the spread around the trend.</p>'),
 
 numericInput("delta2",label=HTML('<math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> 
-                                  <mn>2</mn> </mrow> </msub> </math>'),value=1,min=-5,max=5),
+                                  <mn>2</mn> </mrow> </msub> </math>'),value=1,min=0,max=5),
 
 numericInput("delta4",label=HTML('<math> <msub> <mi>&#x03B4</mi> <mrow class="MJX-TeXAtom-ORD"> 
-                                  <mn>4</mn> </mrow> </msub> </math>'),value=1,min= 0,max=5),
+                                  <mn>4</mn> </mrow> </msub> </math>'),value=1,min=0,max=5),
 
 plotOutput("grafico2"),
 
@@ -493,13 +501,9 @@ HTML('<h3>Strategy 5: Stratified Simple Random Sampling with the poststratified 
     <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msub> </mrow> </msup> </math>.
     Note that the poststrata in this strategy coincide with the strata in Strategy 3.</p>'),
 
-HTML('<p>The following table shows the boundaries for the strata/poststrata: The first and third columns indicate
-    the boundaries with respect to
-   <math> <msup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4</mi> 
-    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow> </msub> <mrow class="MJX-TeXAtom-ORD"> </mrow> </mrow> </msup> </math>
-   and <math> <msup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B4</mi> 
-    <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub> <mrow class="MJX-TeXAtom-ORD"> </mrow> </mrow> </msup> </math>
-   , respectively. The second and fourth columns indicate the number of elements in each stratum.</p>
+HTML('<p>The following table shows the boundaries for the strata/poststrata: The first column indicates the boundaries
+   of the strata in strategy 3 and the poststrata in strategies 4 and 5. The third column indicates the boundaries of the
+   strata in strategies 2 and 5. The second and fourth columns indicate the number of elements in each stratum.</p>
 
       <p>Note that the actual number of strata might differ from the desired number specified by the user.</p>'),
 
@@ -524,31 +528,31 @@ HTML('
    <div class="modelo">
    <p> <span class="ecuacion" id="modelover"><math xmlns="http://www.w3.org/1998/Math/MathML">
      <msub> <mi>Y</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub> <mo>=</mo>
-     <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub>
-     <mo>+</mo> <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow>
+     <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>0</mn> </mrow> </msub>
+     <mo>+</mo> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD"> <mn>1</mn> </mrow>
      </msub> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> 
-     <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD">
+     <mrow class="MJX-TeXAtom-ORD"> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD">
      <mn>2</mn> </mrow> </msub> </mrow> </msubsup> <mo>+</mo>
-     <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
+     <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> </msub>
      </math></span>
      <span class="basura">MM</span>with<span class="basura">MM</span>
      <span class="ecuacion" id="verdadcon1"><math xmlns="http://www.w3.org/1998/Math/MathML">
-     <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
+     <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
      </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
      <span class="ecuacion" id="verdadcon2"><math xmlns="http://www.w3.org/1998/Math/MathML">
-     <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-     </mrow> </msub> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi>
+     <msub> <mi>E</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
+     </mrow> </msub> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>l</mi>
      </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <mn>0</mn> </math></span>,<span class="basura">MM</span>
      <span class="ecuacion" id="verdadcon3"><math xmlns="http://www.w3.org/1998/Math/MathML">
-     <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;<!-- ?? --></mi> </mrow> </msub>
-     <mrow> <mo>(</mo> <msub> <mi>&#x03F5;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi>
-     </mrow> </msub> <mo>)</mo> </mrow> <mo>=</mo> <msub> <mi>&#x03B2;<!-- ?? --></mi>
-     <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> </msub> <msubsup> <mi>x</mi> 
-     <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow> <mrow class="MJX-TeXAtom-ORD">
-     <msub> <mi>2&#x03B2;<!-- ?? --></mi> <mrow class="MJX-TeXAtom-ORD"> <mn>4</mn> </mrow> </msub>
-     </mrow> </msubsup> </math></span>
+    <msub> <mi>V</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>&#x03BE;</mi> </mrow> </msub>
+    <mo stretchy="false">(</mo> <msub> <mi>&#x03F5;</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
+    </msub> <mo stretchy="false">)</mo> <mo>=</mo> <msubsup> <mi>&#x03B2;</mi>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>3</mn> </mrow> <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> </mrow>
+    </msubsup> <msubsup> <mi>x</mi> <mrow class="MJX-TeXAtom-ORD"> <mi>k</mi> </mrow>
+    <mrow class="MJX-TeXAtom-ORD"> <mn>2</mn> <msub> <mi>&#x03B2;</mi> <mrow class="MJX-TeXAtom-ORD">
+    <mn>4</mn> </mrow> </msub> </mrow> </msubsup> </math></span>
      </p>
 </div>
 
@@ -560,16 +564,15 @@ numericInput("beta0",label=HTML('<math> <msub> <mi>&#x03B2</mi> <mrow class="MJX
                                 <mn>0</mn> </mrow> </msub> </math>'),value=0),
 
 numericInput("beta1",label=HTML('<math> <msub> <mi>&#x03B2</mi> <mrow class="MJX-TeXAtom-ORD"> 
-                                <mn>1</mn> </mrow> </msub> </math>'),value=1),
+                                <mn>1</mn> </mrow> </msub> </math>'),value=1,min=0),
 
 numericInput("beta2",label=HTML('<math> <msub> <mi>&#x03B2</mi> <mrow class="MJX-TeXAtom-ORD"> 
-                                  <mn>2</mn> </mrow> </msub> </math>'),value=1,min=-5,max=5),
-
-numericInput("beta3",label=HTML('<math> <msub> <mi>&#x03B2</mi> <mrow class="MJX-TeXAtom-ORD"> 
-                                <mn>3</mn> </mrow> </msub> </math>'),value=1),
+                                  <mn>2</mn> </mrow> </msub> </math>'),value=1,min=0,max=5),
 
 numericInput("beta4",label=HTML('<math> <msub> <mi>&#x03B2</mi> <mrow class="MJX-TeXAtom-ORD"> 
                                 <mn>4</mn> </mrow> </msub> </math>'),value=1,min= 0,max=5),
+
+numericInput("rho",label=HTML('<math>&#x03C1</math>'),value=0.5,min=0,max=1),
 
 plotOutput("grafico5"),
 
@@ -587,7 +590,8 @@ HTML('
 
    <p>No inputs are required from the user in this step.</p>
 
-   <p>The output is the scatter plot of the simulated finite population together with some summary statistics of both variables.</p>
+   <p>The output is the scatter plot of the simulated finite population (with the working model in the
+    background) together with some summary statistics of both variables.</p>
 
    <p><strong>Note:</strong> If <em>N>5000</em> then a random sample of 5000 observations will be shown in
     the scatter plot.</p>'),
@@ -607,7 +611,7 @@ HTML('
     computes the (approximated) variance for each strategy in order to determine which one is more 
     efficient in the estimation of the total of <em>y</em>. The variances are shown both in absolute 
     and relative terms. Relativeness is computed with respect to Strategy 3, 
-    STSRS-HT, the benchmark.</p>
+    STSRS-HT.</p>
 
    <p>The only input required from the user in this step is the desired sample size, <em>n</em>.</p>
 
@@ -685,7 +689,7 @@ HTML('
    <div class="seccion">
    <h2 id="Step7">Monte Carlo simulation</h2>
      
-   <p>In the last two steps above one finite population was generated from the superpopulation model. The 
+   <p>In the last two steps above one finite population was generated from the superpopulation model and the 
     variance of each strategy was computed for this particular population. However, the process has to be
     iterated so the behavior of the strategies can be identified.</p>
 

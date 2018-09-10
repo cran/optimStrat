@@ -1,11 +1,15 @@
 stratify <-
 function(x,H,forced=FALSE,J=NULL) {
   N<- length(x)
-  K<- length(table(x))
   if (is.null(J)) {J<- max(H^2,round(sqrt(N)))}
   id<- 1:N
   id<- id[order(x)]
-  x <- sort(x)
+  K<- length(table(x))
+  if (K==N) {x<- sort(x)} else {
+    x2<- as.vector(by(x,x,length))
+    x <- as.vector(by(x,x,mean))
+    x<- rep(x,times=x2)
+  }
   
   if (N<H) {forced<- FALSE}
   if (K<=H) {estrato<- x}

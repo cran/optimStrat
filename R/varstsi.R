@@ -1,4 +1,4 @@
-optiallo <-
+varstsi <-
 function(n,x,y=x,stratum) {
   SyUh2  <- as.vector(by(y,stratum,var))
   SxUh   <- as.vector(by(x,stratum,sd))
@@ -18,6 +18,6 @@ function(n,x,y=x,stratum) {
     nhcor <- ncor*Nh*SxUh2/sum(Nh*SxUh2,na.rm=TRUE)
     nh    <- ifelse(is.na(nhcor),Nh,nhcor)
   }
-  salida<- sum(((Nh^2)/nh)*(1-(nh/Nh))*SyUh2)
-  salida
+  variance<- sum(((Nh^2)/nh)*(1-(nh/Nh))*SyUh2)
+  list(variance=variance,nh=nh)
 }

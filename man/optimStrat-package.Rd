@@ -7,13 +7,13 @@
 \details{
 The package includes a web-based application where the user can compare five sampling strategies in order to determine which one to implement in a survey.
 
-The package also includes a function to perform the comparison mentioned above, as well as functions for stratifying the auxiliary variable.
+The package also includes a function to perform the comparison mentioned above, as well as functions for stratifying the auxiliary variable and calculations of the variance of Stratified Simple Random Sampling and Pareto \eqn{\pi}ps.
 }
 \author{
 Edgar Bueno
 }
 \references{
-Bueno, E. (2018). A comparison of Stratified simple random sampling and Probability proportional-to-size sampling. \emph{Research Report, Department of Statistics, Stockholm University}, \bold{2018}(5).
+Bueno, E. (2018). \emph{A Comparison of Stratified Simple Random Sampling and Probability Proporional-to-size Sampling.} Research Report, Department of Statistics, Stockholm University 2018:6. \url{http://gauss.stat.su.se/rr/RR2018_6.pdf}.
 }
 \keyword{ package }
 \keyword{ survey }

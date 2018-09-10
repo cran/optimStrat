@@ -22,5 +22,6 @@ An object with the covariance between \code{x} and \code{y}.}
 \examples{
 x<- rnorm(100)
 y<- rnorm(100)
-covp(x,y)
+covp(x, y)
+cov(x, y)
 }
