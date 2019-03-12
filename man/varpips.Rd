@@ -3,12 +3,12 @@
 \title{Variance of Pareto PIps Sampling with the HT Estimator}
 \description{Compute the design variance of the Horvitz-Thompson estimator of the total of \code{y} under Pareto probability proportional-to-size Sampling, where the size variable is indicated by \code{x} and the sample size is \code{n}.}
 \usage{
-varpips(n, x, y)
+varpips(y,x,n)
 }
 \arguments{
-  \item{n}{a positive integer indicating the desired sample size.}
-  \item{x}{a positive numeric vector giving the values of the auxiliary variable that is used in order to define the desired inclusion probabilities.}
   \item{y}{a numeric vector giving the values of the study variable.}
+  \item{x}{a positive numeric vector giving the values of the auxiliary variable that is used in order to define the inclusion probabilities.}
+  \item{n}{a positive integer indicating the desired sample size.}
   }
 \details{
 Target inclusion probabilities are computed as \eqn{\pi_{k} = n\cdot x_{k}/\sum x_{k}}{\pi_k = n x_k / sum(x_k)}.
@@ -21,17 +21,17 @@ Once the \eqn{\pi_k} are obtained, the variance of the Horvitz-Thompson estimato
 \deqn{t_{3} = \sum \pi_{k}(1-\pi_{k})}{t_3 = \Sigma \pi_k (1-\pi_k)}
 }
 \value{
-A list containing the following:
-\item{variance}{a vector of length one giving the variance of the Horvitz-Thompson estimator under Pareto probability proportional-to-size Sampling.}
-\item{pinc}{a vector with length \code{length(x)} giving the target inclusion probabilities of each element..}
+A numeric value giving the variance of the Horvitz-Thompson estimator under Pareto probability proportional-to-size Sampling.
+}
+\seealso{
+\code{\link{varstsi}} for the variance of the Horvitz-Thompson estimator under stratified simple random sampling; \code{\link{varpipspos}} for the variance of the poststratified estimator under probability proportional-to-size sampling; \code{\link{varstsipos}} for the variance of the poststratified estimator under stratified simple random sampling; \code{\link{varpipsreg}} for the variance of the regression estimator under probability proportional-to-size sampling; \code{\link{varstsireg}} for the variance of the regression estimator under stratified simple random sampling.
 }
 \references{
 Rosen, B. (1997). \emph{On Sampling with Probability Proportional to Size.} Journal of Statistical Planning and Inference \strong{62}, 159-191.
 }
 \examples{
 x<- 1 + sort( rgamma(5000, shape=4/9, scale=108) ) #simulating the auxiliary variable
-y<- rgamma(x, shape=1, scale=x) #simulating the study variable
-z<- varpips(n=500, x=x, y=y)
-z$variance
+y<- simulatey(x,b0=10,b1=1,b2=1.25,b4=0.75,rho=0.95)
+varpips(y,x=x^1.25,n=500)
 }
 \keyword{survey}

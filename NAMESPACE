@@ -1,4 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 importFrom("graphics", "hist")
 importFrom("stats", "cor", "cov", "rgamma", "rnorm", "sd", "var")
-import("shiny")
+import("shiny","cubature","mvtnorm")
