@@ -35,4 +35,3 @@ desmse(y,x,n=500,H=6,d2=1.25,d4=0.50)
 desmse(y,x,n=500,H=6,d2=1.00,d4=1.00)
 }
 \keyword{survey}
-

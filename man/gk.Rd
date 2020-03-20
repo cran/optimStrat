@@ -27,9 +27,9 @@ A numeric vector giving the values of the function.}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 %}
 \examples{
-x1<- 1 + sort( rgamma(5000, shape=4/9, scale=108) )
-x2<- 1 + sort( rgamma(5000, shape=4/9, scale=108) )
-x3<- 1 + sort( rgamma(5000, shape=4/9, scale=108) )
+x1<- 1 + sort( rgamma(30, shape=4/9, scale=108) )
+x2<- 1 + sort( rgamma(30, shape=4/9, scale=108) )
+x3<- 1 + sort( rgamma(30, shape=4/9, scale=108) )
 x<- cbind(x1,x2,x3)
 gk(x,Beta21=c(1,2,-1),Beta22=c(1,0.75,0.5))
 }

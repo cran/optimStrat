@@ -18,13 +18,15 @@ function(x,H,forced=FALSE,J=NULL) {
     frecuencia <-  hist(x,cortes,plot=FALSE,include.lowest=TRUE,right=FALSE)$counts/N
     frecuencia2<- frecuencia^0.5
     cumu       <- cumsum(frecuencia2)
-    compara    <- outer(cumu,sum(frecuencia2)*(1:H)/H,absdif)
-    basura     <- matrix(apply(compara,2,min),J,H,byrow=TRUE)
-    filas      <- matrix(1:J,J,H)
-    compara2   <- compara==basura
-    cortes2    <- c(min(x),cortes[-1][filas[compara2==1]])
-    cortes2    <- unique(cortes2)
-    estrato    <- cut(x,cortes2,labels=FALSE,include.lowest=TRUE,right=FALSE)
+    cortes2<- (cortes[-1]+cortes[-length(cortes)])*0.5
+    cortes2<- c(cortes[1],cortes2,cortes[length(cortes)])
+    cumu2<- c(0,cumu,cumu[length(cumu)])
+    yh<- sum(frecuencia2)*(1:H)/H
+    j<- findInterval(yh,cumu2,rightmost.closed=TRUE)
+    term1<- (yh-cumu2[j])/(cumu2[j+1]-cumu2[j]); term1[is.nan(term1)]<- 1
+    cortes3<- cortes2[j]+term1*(cortes2[j+1]-cortes2[j])
+    cortes<- c(min(x),cortes3)
+    estrato<- cut(x,cortes,labels=FALSE,include.lowest=TRUE,right=FALSE)
   }
   H2<- length(table(estrato))
   while (K<H&H<N&forced==TRUE&H2<H) {

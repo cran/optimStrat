@@ -25,3 +25,4 @@ y<- rnorm(100)
 covp(x, y)
 cov(x, y)
 }
+\keyword{internal}

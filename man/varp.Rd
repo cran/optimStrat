@@ -22,3 +22,4 @@ x<- rnorm(100)
 varp(x)
 var(x)
 }
+\keyword{internal}

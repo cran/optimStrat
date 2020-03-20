@@ -3,8 +3,8 @@
 \title{Anticipated Mean Squared Error}
 \description{Compute the anticipated Mean Squared Error of five sampling strategies.}
 \usage{
-expmse(b, d, x, n, H = NULL, Rxy, estrato1 = NULL, estrato2 = NULL, 
-   st = 1:5, short = FALSE)
+expmse(b, d, x, n, H, Rxy, estrato1 = NULL, estrato2 = NULL, st = 1:5,
+   short = FALSE)
 }
 \arguments{
   \item{b}{a numeric vector of length two giving the \emph{true} shapes of the 
@@ -60,6 +60,5 @@ stratum<- optiallo(n=500,x,H=6)
 poststratum<- optiallo(n=500,x^1.5,H=10)
 expmse(b=c(1,1),d=c(1,1),x,n=500,H=6,Rxy=0.9,
    estrato1=poststratum,estrato2=stratum)
-
 }
 \keyword{survey}

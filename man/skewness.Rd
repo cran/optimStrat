@@ -19,3 +19,4 @@ A vector of length one giving the sample skewness of \code{x}.}
 x<- rnorm(1000)
 skewness(x)
 }
+\keyword{univar}

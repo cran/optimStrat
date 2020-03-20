@@ -22,3 +22,4 @@ x<- matrix(1:12, 4, 3)
 y<- matrix(12:1, 4, 3)
 absdif(x, y)
 }
+\keyword{internal}

@@ -1,5 +1,5 @@
 expmse <-
-function (b, d, x, n, H=NULL, Rxy,estrato1=NULL,estrato2=NULL,st=1:5,short=FALSE) {
+function (b, d, x, n, H, Rxy,estrato1=NULL,estrato2=NULL,st=1:5,short=FALSE) {
    variance1<- variance2<- variance3<- variance4<- variance5<- NA
    F0<- (cov(x,x^b[1])^2)*((1/(Rxy^2))-(1/(cor(x,x^b[1])^2)))/(mean(x^(2*b[2]))*var(x))
    F0<- max(F0,0)
