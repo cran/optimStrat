@@ -92,14 +92,14 @@ function(input,output) {
    matrizd<- matrix(matriz$Density,51,51)
    matrizp<- matrix(matriz$Proba,51,51)
 
-   image(seq1,seq2,z=matrizd,xlab="b2",ylab="b4",main="",col=terrain.colors(50),las=1)
+   image(seq1,seq2,z=matrizd,xlab="b1,2",ylab="b2",main="",col=terrain.colors(50),las=1)
    contour(seq1,seq2,z=matrizp,xlab="",ylab="",main="",add=TRUE,levels=c(0.5,0.9,0.95,0.99),labcex=1)
   })
 
   output$down_data<- downloadHandler(filename="Design.csv",content=function(file) {
      pik<- pinc(input$nn,x())
      resulta<- data.frame(x(),pik,estrato1()$stratum,estrato1()$nh,estrato2()$stratum,estrato2()$nh)
-     names(resulta)<- c("x","PIk","st_d2","nh_d2","st_d4","nh_d4")
+     names(resulta)<- c("x","PIk","st_d12","nh_d12","st_d2","nh_d2")
      write.table(resulta,file,row.names=FALSE,sep=",",dec=".")
   })
 
@@ -109,7 +109,7 @@ function(input,output) {
    dmvnorm2<- function(b1,b2) {
       if (input$rho12==0) {dnorm(b1,d[1],sqrt(varb1))*dnorm(b2,d[2],sqrt(varb2))} else {dmvnorm(c(b1,b2),d,Sigma)}
    }
-    integra<- function(b, d, x, n, H, Rxy,indica) {expmse(b, d, x, n, H, Rxy,estrato1(),estrato2(),indica,short=TRUE)*dmvnorm2(b[1],b[2])}
+    integra<- function(b, d, x, n, H, Rxy,indica) {expvar(b, d, x, n, H, Rxy,estrato1(),estrato2(),indica,short=TRUE)*dmvnorm2(b[1],b[2])}
     d<- c(input$delta2,input$delta4)
     varb1<- min((d[1]/3.8906)^2,input$sigma1)
     varb2<- min((d[2]/3.8906)^2,input$sigma2)
@@ -136,7 +136,7 @@ function(input,output) {
         incProgress(1/10)
       }
       for (i in 1:J) {
-        matriz5[i,]<- expmse(c(matriz$Var1[i],matriz$Var2[i]), d, x(), input$nn, input$H, input$rho,estrato1(),estrato2())
+        matriz5[i,]<- expvar(c(matriz$Var1[i],matriz$Var2[i]), d, x(), input$nn, input$H, input$rho,estrato1(),estrato2())
         incProgress(1/(2*J))
       }
     })
@@ -165,7 +165,7 @@ function(input,output) {
     matriz6<- log(abs(matriz6))*sign(matriz6)
     matriz6[is.nan(matriz6)]<- 0
     zlim<- range(matriz6); if (zlim[1]==zlim[2]) {zlim[1]<- zlim[1]-1; zlim[2]<- zlim[2]+1}
-    persp(matriz7$seq1,matriz7$seq2,z=matriz6,xlab="b2",ylab="b4",zlab="",main="",
+    persp(matriz7$seq1,matriz7$seq2,z=matriz6,xlab="b1,2",ylab="b2",zlab="",main="",
        theta=input$theta,phi=input$phi,col="yellow",ticktype = "detailed",zlim=zlim)
   })
 

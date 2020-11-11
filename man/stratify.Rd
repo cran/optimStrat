@@ -24,7 +24,7 @@ A numeric vector giving the stratum to which each observation in \code{x} belong
 Sarndal, C.E., Swensson, B. and Wretman, J. (1992). \emph{Model Assisted Survey Sampling}. Springer.
 }
 \seealso{
-\code{\link{optiallo}} for allocating the sample into the strata using Neyman optimal allocation; \code{\link{varstsi}} for computing the variance of Stratified Simple Random Sample.
+\code{\link{optiallo}} for allocating the sample into the strata using Neyman optimal allocation.
 }
 \examples{
 x<- 1 + sort( rgamma(100, shape=4/9, scale=108) )

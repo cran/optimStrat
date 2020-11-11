@@ -17,6 +17,7 @@ function(n,x,stratum=NULL,...) {
     nhcor <- ncor*Nh*SxUh2/sum(Nh*SxUh2,na.rm=TRUE)
     nh    <- ifelse(is.na(nhcor),Nh,nhcor)
   }
-  nh<- nh[stratum]
+  stratum2<- names(table(stratum))
+  nh<- nh[match(stratum,stratum2)]
   list(stratum=stratum,nh=nh)
 }
