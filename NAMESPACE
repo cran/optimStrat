@@ -1,4 +1,4 @@
-exportPattern("^[[:alpha:]]+")
+export("covp", "desvar", "expgreg", "expvar", "optiallo", "optimApp", "pinc", "simulatey", "skewness", "stratify", "vargreg", "varp")
+import("cubature","mvtnorm","shiny")
 importFrom("graphics", "hist")
-importFrom("stats", "cor", "cov", "rgamma", "rnorm", "sd", "var", "lm")
-import("shiny","cubature","mvtnorm")
+importFrom("stats", "cor", "cov", "lm", "rgamma", "rnorm", "sd", "var")
